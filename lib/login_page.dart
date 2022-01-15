@@ -30,39 +30,51 @@ class _LoginPageState extends State<LoginPage> {
                       height: 150,
                       child: Image.asset('assets/images/bulls.png')),
                   SizedBox(height: 20),
-                  TextField(
-                    onChanged: (text) {
-                      email = text;
-                    },
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                      labelText: 'Email',
-                      border: OutlineInputBorder(),
+                  Card(
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          left: 12, right: 12, top: 8, bottom: 8),
+                      child: Column(
+                        children: [
+                          TextField(
+                            onChanged: (text) {
+                              email = text;
+                            },
+                            keyboardType: TextInputType.emailAddress,
+                            decoration: InputDecoration(
+                              labelText: 'Email',
+                              border: OutlineInputBorder(),
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          TextField(
+                            onChanged: (text) {
+                              password = text;
+                            },
+                            obscureText: true,
+                            decoration: InputDecoration(
+                              labelText: 'Password',
+                              border: OutlineInputBorder(),
+                            ),
+                          ),
+                          SizedBox(height: 16),
+                          ElevatedButton(
+                            onPressed: () {
+                              if (email == 'matheus@gmail.com' &&
+                                  password == '123') {
+                                print('Logado');
+                                Navigator.of(context)
+                                    .pushReplacementNamed('/home');
+                              } else {
+                                print('Login não encontrado');
+                              }
+                            },
+                            child: Text('Entrar'),
+                          )
+                        ],
+                      ),
                     ),
                   ),
-                  SizedBox(height: 10),
-                  TextField(
-                    onChanged: (text) {
-                      password = text;
-                    },
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      labelText: 'Password',
-                      border: OutlineInputBorder(),
-                    ),
-                  ),
-                  SizedBox(height: 16),
-                  ElevatedButton(
-                    onPressed: () {
-                      if (email == 'matheus@gmail.com' && password == '123') {
-                        print('Logado');
-                        Navigator.of(context).pushReplacementNamed('/home');
-                      } else {
-                        print('Login não encontrado');
-                      }
-                    },
-                    child: Text('Entrar'),
-                  )
                 ],
               ),
             ),
