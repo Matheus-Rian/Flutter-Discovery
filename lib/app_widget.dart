@@ -1,4 +1,5 @@
 import 'package:byanca_linda/app_controller.dart';
+import 'package:byanca_linda/login_tinder_page.dart';
 import 'package:flutter/material.dart';
 
 import 'home_page.dart';
@@ -18,10 +19,11 @@ class AppWidget extends StatelessWidget {
                   brightness: AppController.instance.isDartTheme
                       ? Brightness.dark
                       : Brightness.light),
-              initialRoute: '/',
+              initialRoute: '/login/tinder',
               routes: {
                 '/': (context) => LoginPage(),
                 '/home': (context) => HomePage(),
+                '/login/tinder': (context) => LoginTinderPage()
               });
         });
   }
