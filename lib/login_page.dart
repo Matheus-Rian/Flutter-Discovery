@@ -99,7 +99,7 @@ class _LoginPageState extends State<LoginPage> {
         Container(
           color: Colors.black.withOpacity(0.3),
         ),
-        _body(),
+        SingleChildScrollView(child: _body()),
       ],
     ));
   }
