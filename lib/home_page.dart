@@ -20,8 +20,11 @@ class HomePageState extends State<HomePage> {
         child: Column(
           children: [
             UserAccountsDrawerHeader(
-                currentAccountPicture:
-                    Image.asset('assets/images/matheus.HEIC'),
+                currentAccountPicture: ClipRRect(
+                  borderRadius: BorderRadius.circular(40),
+                  child: Image.network(
+                      'https://avatars.githubusercontent.com/u/53922139?v=4'),
+                ),
                 accountName: Text('Matheus Rian'),
                 accountEmail: Text('matheus@gmail.com')),
             ListTile(
